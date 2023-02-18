@@ -1,8 +1,8 @@
-import { dblClick } from '@testing-library/user-event/dist/click';
+//import { dblClick } from '@testing-library/user-event/dist/click';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import "./Dashboard.css";
 import { auth, db, logout } from "../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
@@ -29,9 +29,9 @@ function Dashboard() {
         if (loading) return;
         if (!user) return navigate("/");
         fetchUserName();
-    }, [user, loading]);
+    }, [user, loading, fetchName, nav]);
 
-    if (loading || name == "") {
+    if (loading || name === "") {
         return (
             <div>
                 Loading....

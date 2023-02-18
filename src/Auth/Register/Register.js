@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
     auth,
     registerWithEmailAndPassword,
@@ -24,7 +24,7 @@ function Register() {
     useEffect(() => {
         if (loading) return;
         if (user) navigate("/dashboard");
-    }, [user, loading, ]);
+    }, [user, loading, navigate]);
 
     if (loading || user) {
         return (
