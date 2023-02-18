@@ -29,7 +29,7 @@ function Dashboard() {
         if (loading) return;
         if (!user) return navigate("/");
         fetchUserName();
-    }, [user, loading, fetchName, nav]);
+    }, [user, loading, fetchUserName, navigate]);
 
     if (loading || name === "") {
         return (
